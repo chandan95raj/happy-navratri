@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navratri Wishes - शुभ नवरात्रि</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff6b35, #f7931e, #ffd700, #ff1744);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #d32f2f;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hindi-title {
+            color: #ff6b35;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+        }
+
+        .input-group {
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        label {
+            display: block;
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1em;
+            border: 3px solid #ff6b35;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            border-color: #d32f2f;
+            box-shadow: 0 0 15px rgba(211, 47, 47, 0.3);
+            transform: scale(1.02);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #ff6b35, #d32f2f);
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #d32f2f, #ff6b35);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .wish-card {
+            background: linear-gradient(135deg, #fff3e0, #ffccbc);
+            border: 3px solid #ff6b35;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 1;
+            display: none;
+        }
+
+        .wish-text {
+            font-size: 1.3em;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .from-text {
+            font-size: 1.1em;
+            color: #d32f2f;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .decorative-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .flower {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, #ffd700, #ff6b35);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .flower:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .flower:nth-child(2) {
+            top: 20%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .flower:nth-child(3) {
+            bottom: 15%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .flower:nth-child(4) {
+            bottom: 25%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .share-btn {
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .share-btn.twitter {
+            background: #1DA1F2;
+        }
+
+        .share-btn.facebook {
+            background: #4267B2;
+        }
+
+        .share-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .hindi-title {
+                font-size: 1.4em;
+            }
+            
+            .card {
+                padding: 25px;
+                margin: 10px;
+            }
+            
+            input[type="text"] {
+                padding: 12px 15px;
+            }
+            
+            .wish-text {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decorative-elements">
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h1>🪔 Navratri Wishes 🪔</h1>
+            <div class="hindi-title">शुभ नवरात्रि की हार्दिक शुभकामनाएं</div>
+            
+            <div class="input-group">
+                <label for="userName">आपका नाम (Your Name):</label>
+                <input type="text" id="userName" placeholder="अपना नाम यहाँ लिखें" />
+            </div>
+            
+            <button class="btn" onclick="generateWish()">🎉 Wish Generate करें</button>
+            <button class="btn" onclick="showNewWish()" style="display: none;" id="newWishBtn">नई Wish बनाएं</button>
+            
+            <div class="wish-card" id="wishCard">
+                <div class="wish-text" id="wishText"></div>
+                <div class="from-text" id="fromText"></div>
+                
+                <div class="share-buttons">
+                    <button class="share-btn" onclick="shareWhatsApp()">
+                        📱 WhatsApp पर Share करें
+                    </button>
+                    <button class="share-btn facebook" onclick="shareFacebook()">
+                        📘 Facebook पर Share करें
+                    </button>
+                    <button class="share-btn twitter" onclick="shareTwitter()">
+                        🐦 Twitter पर Share करें
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const navratriWishes = [
+            "माँ दुर्गा का आशीर्वाद आप पर सदा बना रहे। इस नवरात्रि में आपके जीवन में खुशियों की बहार आए। शुभ नवरात्रि!",
+            "नौ दिन नौ रूप, माँ दुर्गा के दर्शन का पुण्य मिले। आपको और आपके परिवार को नवरात्रि की हार्दिक शुभकामनाएं!",
+            "जय माता दी! इस पावन नवरात्रि पर्व पर माँ दुर्गा आपको शक्ति, समृद्धि और सुख से भर दे। शुभ नवरात्रि!",
+            "माँ शैलपुत्री से लेकर माँ सिद्धिदात्री तक, सभी नौ देवियों का आशीर्वाद आप पर बना रहे। हैप्पी नवरात्रि!",
+            "गरबा की धुन, दंडिया की थाप, और माँ दुर्गा की कृपा से आपका जीवन खुशियों से भर जाए। शुभ नवरात्रि!",
+            "माँ दुर्गा के नौ रूपों की कृपा से आपके सारे दुख दूर हों और जीवन में नई खुशियाँ आएं। नवरात्रि की शुभकामनाएं!",
+            "दुर्गा माँ का प्यार, परिवार में खुशहाली, और जीवन में शांति मिले। आपको नवरात्रि की ढेर सारी शुभकामनाएं!"
+        ];
+
+        let currentWish = "";
+        let userName = "";
+
+        function generateWish() {
+            const nameInput = document.getElementById('userName');
+            userName = nameInput.value.trim();
+            
+            if (!userName) {
+                alert('कृपया अपना नाम लिखें!');
+                nameInput.focus();
+                return;
+            }
+
+            // Get random wish
+            currentWish = navratriWishes[Math.floor(Math.random() * navratriWishes.length)];
+            
+            // Display wish
+            document.getElementById('wishText').textContent = currentWish;
+            document.getElementById('fromText').textContent = `- ${userName} की ओर से ❤️`;
+            
+            // Show wish card and hide/show buttons
+            document.getElementById('wishCard').style.display = 'block';
+            document.getElementById('newWishBtn').style.display = 'inline-block';
+            
+            // Scroll to wish card
+            document.getElementById('wishCard').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showNewWish() {
+            // Generate new random wish
+            let newWish;
+            do {
+                newWish = navratriWishes[Math.floor(Math.random() * navratriWishes.length)];
+            } while (newWish === currentWish && navratriWishes.length > 1);
+            
+            currentWish = newWish;
+            document.getElementById('wishText').textContent = currentWish;
+        }
+
+        function shareWhatsApp() {
+            const message = `${currentWish}\n\n- ${userName} की ओर से ❤️\n\n🪔 शुभ नवरात्रि 🪔`;
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function shareFacebook() {
+            const message = `${currentWish}\n\n- ${userName} की ओर से ❤️\n\n🪔 शुभ नवरात्रि 🪔`;
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(message)}`;
+            window.open(facebookUrl, '_blank');
+        }
+
+        function shareTwitter() {
+            const message = `${currentWish}\n\n- ${userName} की ओर से ❤️\n\n🪔 #नवरात्रि #NavratriWishes 🪔`;
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`;
+            window.open(twitterUrl, '_blank');
+        }
+
+        // Enter key support
+        document.getElementById('userName').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                generateWish();
+            }
+        });
+
+        // Add some sparkle effects
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.style.position = 'absolute';
+            sparkle.style.width = '4px';
+            sparkle.style.height = '4px';
+            sparkle.style.background = '#ffd700';
+            sparkle.style.borderRadius = '50%';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+            sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            sparkle.style.animation = 'sparkleAnim 2s ease-out forwards';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 2000);
+        }
+
+        // Add sparkle animation CSS
+        const sparkleStyle = document.createElement('style');
+        sparkleStyle.textContent = `
+            @keyframes sparkleAnim {
+                0% { 
+                    opacity: 1; 
+                    transform: scale(0) rotate(0deg); 
+                }
+                100% { 
+                    opacity: 0; 
+                    transform: scale(1) rotate(360deg); 
+                }
+            }
+        `;
+        document.head.appendChild(sparkleStyle);
+
+        // Create sparkles periodically
+        setInterval(createSparkle, 1000);
+    </script>
+</body>
+</html>
